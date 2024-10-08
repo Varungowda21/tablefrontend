@@ -2,13 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 // import App from './App';
-import UseReducer from "./useReducer/userReducer";
+// import UseReducer from "./useReducer/userReducer";
+import ReduxToolkit from "./reduxToolkit/reduxToolkit";
 import reportWebVitals from "./reportWebVitals";
+import { store } from "./reduxToolkit/store";
+import { Provider } from "react-redux";
+console.log(store.getState());
 
+store.subscribe(() => {
+  console.log(store.getState());
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <UseReducer />
+    {/* <UseReducer /> */}
+    <Provider store={store}>
+      <ReduxToolkit />
+    </Provider>
     {/* <App /> */}
   </React.StrictMode>
 );
