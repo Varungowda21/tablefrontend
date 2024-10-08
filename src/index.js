@@ -3,23 +3,25 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 // import App from './App';
 // import UseReducer from "./useReducer/userReducer";
-import ReduxToolkit from "./reduxToolkit/reduxToolkit";
+// import ReduxToolkit from "./reduxToolkit/reduxToolkit";
+import UseState from "./useState/useState";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./reduxToolkit/store";
-import { Provider } from "react-redux";
-console.log(store.getState());
+// import { store } from "./reduxToolkit/store";
+// import { Provider } from "react-redux";
+// console.log(store.getState());
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <UseReducer /> */}
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <ReduxToolkit />
-    </Provider>
+    </Provider> */}
     {/* <App /> */}
+    <UseState/>
   </React.StrictMode>
 );
 
